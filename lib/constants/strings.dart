@@ -4,7 +4,13 @@ const HOME_PAGE = 'homePage';
 const REPORTS_PAGE = "reportsPage";
 const PAYMENT_PAGE = 'paymentPage';
 const UNQUOTED_CASE_PAGE = 'unquotedCasePage';
-const CONFORMED_CASE_PAGE = 'conformedCasePage';
+const CONFIRMED_CASE_PAGE = 'conformedCasePage';
+const COMPLETED_CASE_PAGE = "completedCasePage";
+const ALLOCATED_CASE_PAGE = 'allocatedCasePage';
+const UNALLOCATED_CASE_PAGE ='unAllocatedCasePage';
+const PENDING_PAGE = 'pendingPage';
+const EVALUATOR_PAGE = 'evaluatorPage';
+
 
 
 // Page Titles
@@ -16,10 +22,11 @@ const EVALUATOR_APP= "Evaluator App";
 const TEAM_LEAD = "Team Lead";
 const YOUR_TEAM = "Your Team";
 const CONFIRMED_CASES = "Confirmed Cases";
+
 const PENDING_CASES = "Pending Cases";
 const UPDATED_CASES = 'Updated Cases';
 const ALLOCATED_CASES = "Allocated Cases";
-const UNALLOCATED_CASES = "Unallocated Cases";
+const UNALLOCATED_CASES = "UnAllocated Cases";
 const PRICE_NOT_QUOTED = "Price not Quoted";
 const PAYMENTS = "Payments";
 const REPORTS = "Reports";

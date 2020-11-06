@@ -14,7 +14,7 @@ class AppFontStyle{
   static TextStyle titleAppBarStyle(Color color, {num textSize}) {
     return TextStyle(
         color: color,
-        fontSize: 18,
+        fontSize:textSize!=null? textSize:18,
         fontWeight: FontWeight.w300,
         fontFamily: "Exo"
     );

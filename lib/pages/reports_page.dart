@@ -35,7 +35,7 @@ class _ReportsPageState extends State<ReportsPage> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          EVALUATOR_APP,
+          REPORTS,
           style: AppFontStyle.appBarTittle(PRIMARY_COLOR),
         ),
       ),
@@ -45,11 +45,6 @@ class _ReportsPageState extends State<ReportsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 260),
-                child: Text("Reports",style: AppFontStyle.headingTextStyle(APP_BLACK_COLOR, textSize: 22.0),),
-              ),
-              SizedBox(height: LINE_HEIGHT),
               SizedBox(height: LINE_HEIGHT),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -68,13 +63,19 @@ class _ReportsPageState extends State<ReportsPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             ListTile(
+
                               title: Text(CONFIRMED_CASES, style: AppFontStyle.regularTextStyle2(APP_BLACK_COLOR, textSize: 20.0),),
                               subtitle: Text("12 Cases", style: AppFontStyle.bodyTextStyle(APP_BLACK_COLOR),),
                               trailing: Icon(Icons.navigate_next, color: APP_BLACK_COLOR,),
-                              onTap: (){},
+                              onTap: (){
+                                Navigator.pushNamed(context, CONFIRMED_CASE_PAGE);
+                              },
                             ),
                             Divider(),
                             ListTile(
+                              onTap: (){
+                                Navigator.pushNamed(context, ALLOCATED_CASE_PAGE);
+                              },
                               title: Text(ALLOCATED_CASES, style: AppFontStyle.regularTextStyle2(APP_BLACK_COLOR, textSize: 20.0),),
                               subtitle: Text("12 Cases", style: AppFontStyle.bodyTextStyle(APP_BLACK_COLOR),),
                               trailing: Icon(Icons.navigate_next, color: APP_BLACK_COLOR,),
@@ -82,7 +83,7 @@ class _ReportsPageState extends State<ReportsPage> {
                             Divider(),
                             ListTile(
                               onTap: (){
-                                Navigator.pushNamed(context, CONFORMED_CASE_PAGE);
+                                Navigator.pushNamed(context, COMPLETED_CASE_PAGE);
                               },
                               title: Text(COMPLETED_CASES, style: AppFontStyle.regularTextStyle2(APP_BLACK_COLOR, textSize: 20.0),),
                               subtitle: Text("12 Cases", style: AppFontStyle.bodyTextStyle(APP_BLACK_COLOR),),

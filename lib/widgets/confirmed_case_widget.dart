@@ -2,7 +2,7 @@ import 'package:evalutor_app/constants/app_font_style.dart';
 import 'package:evalutor_app/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class ConformedCaseWidget extends StatelessWidget {
+class ConfirmedCaseWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(

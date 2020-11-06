@@ -30,6 +30,7 @@ dependencies:
   cached_network_image: ^2.0.0
   modal_bottom_sheet: ^0.2.2
   calendar_strip: ^1.0.6
+  url_launcher: ^5.7.10
 
 dev_dependencies:
   flutter_test:

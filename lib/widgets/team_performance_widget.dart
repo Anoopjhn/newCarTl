@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:evalutor_app/constants/dimen.dart';
 import 'package:evalutor_app/constants/strings.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TeamPerformancewidget extends StatelessWidget {
   @override
@@ -37,14 +38,25 @@ class TeamPerformancewidget extends StatelessWidget {
               ],
             ),
             SizedBox(width: LINE_HEIGHT*1.5),
-            CircleAvatar(
-              backgroundColor: PRIMARY_COLOR,
-              radius: 22,
-              child: Icon(Icons.add_ic_call_outlined, color: APP_WHITE_COLOR,),
+            InkWell(
+              onTap: _launchURL,
+              child: CircleAvatar(
+                backgroundColor: PRIMARY_COLOR,
+                radius: 22,
+                child: Icon(Icons.add_ic_call_outlined, color: APP_WHITE_COLOR,),
+              ),
             )
           ],
         ),
       ),
     );
+  }
+  _launchURL() async {
+    const url = 'tel: +918921661155';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

@@ -2,18 +2,16 @@ import 'package:evalutor_app/constants/app_font_style.dart';
 import 'package:evalutor_app/constants/colors.dart';
 import 'package:evalutor_app/constants/dimen.dart';
 import 'package:evalutor_app/constants/strings.dart';
-import 'package:evalutor_app/widgets/payment_widget.dart';
-import 'package:evalutor_app/widgets/unquoted_case_widget.dart';
+import 'package:evalutor_app/widgets/confirmed_case_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class UnquotedCasePage extends StatefulWidget {
+class ConfirmedCasePage extends StatefulWidget {
   @override
-  _UnquotedCasePageState createState() => _UnquotedCasePageState();
+  _ConfirmedCasePageState createState() => _ConfirmedCasePageState();
 }
 
-class _UnquotedCasePageState extends State<UnquotedCasePage> {
+class _ConfirmedCasePageState extends State<ConfirmedCasePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +29,7 @@ class _UnquotedCasePageState extends State<UnquotedCasePage> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          UNQUOTED_CASES,
+          CONFIRMED_CASES,
           style: AppFontStyle.appBarTittle(PRIMARY_COLOR),
         ),
       ),
@@ -41,11 +39,11 @@ class _UnquotedCasePageState extends State<UnquotedCasePage> {
               children: [
                 SizedBox(height: LINE_HEIGHT,),
                 ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: 15,
-                  shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: 15,
+                    shrinkWrap: true,
                     itemBuilder: (context, int index){
-                      return UnquotedCaseWidget();
+                      return ConfirmedCaseWidget();
                     }
                 )
               ],

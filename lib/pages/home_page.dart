@@ -57,8 +57,14 @@ class _HomePageState extends State<HomePage> {
                                 )
                               ],
                             ),
+                            onTap: (){
+                              Navigator.pushNamed(context, CONFIRMED_CASE_PAGE);
+                            },
                           ),
                           ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, PENDING_PAGE);
+                            },
                             leading: Icon(Icons.hourglass_empty_outlined,
                                 color: APP_BLACK_COLOR),
                             title: Text(
@@ -85,6 +91,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, ALLOCATED_CASE_PAGE);
+                            },
                             leading: Icon(Icons.assignment_outlined,
                                 color: APP_BLACK_COLOR),
                             title: Text(
@@ -111,6 +120,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, UNALLOCATED_CASE_PAGE);
+                            },
                             leading: Icon(Icons.assignment_outlined,
                                 color: APP_BLACK_COLOR),
                             title: Text(
@@ -137,6 +149,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, UNQUOTED_CASE_PAGE);
+                            },
                             leading: Icon(Icons.assignment_outlined,
                                 color: APP_BLACK_COLOR),
                             title: Text(
@@ -163,6 +178,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, PAYMENT_PAGE);
+                            },
                             leading: Icon(Icons.assignment_outlined,
                                 color: APP_BLACK_COLOR),
                             title: Text(
@@ -189,6 +207,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, REPORTS_PAGE);
+                            },
                             leading: Icon(Icons.assignment_outlined,
                                 color: APP_BLACK_COLOR),
                             title: Text(

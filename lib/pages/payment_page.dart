@@ -30,21 +30,19 @@ class _PaymentPageState extends State<PaymentPage> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          EVALUATOR_APP,
+          PAYMENTS,
           style: AppFontStyle.appBarTittle(PRIMARY_COLOR),
         ),
 
       ),
       body: SingleChildScrollView(
         child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(PAYMENTS, style: AppFontStyle.headingTextStyle(APP_BLACK_COLOR, textSize: 22.0)),
-                SizedBox(height: LINE_HEIGHT,),
-                TextFormField(
+          child: Column(
+            children: [
+              SizedBox(height: LINE_HEIGHT,),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.search, color: PRIMARY_COLOR,),
                     enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(32),borderSide: BorderSide(color: PRIMARY_COLOR),),
@@ -54,18 +52,18 @@ class _PaymentPageState extends State<PaymentPage> {
                     contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0)
                   ),
                 ),
-                SizedBox(height: LINE_HEIGHT,),
-                ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                    itemCount: 15,
-                    itemBuilder: (context, int index){
-                  return PaymentWidget();
-                }
-                )
+              ),
+              SizedBox(height: LINE_HEIGHT,),
+              ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                  itemCount: 15,
+                  itemBuilder: (context, int index){
+                return PaymentWidget();
+              }
+              )
 
-              ],
-            ),
+            ],
           ),
         ),
       ),
