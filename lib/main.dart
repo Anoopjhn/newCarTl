@@ -1,3 +1,4 @@
+import 'package:evalutor_app/pages/add_new_case_page.dart';
 import 'package:evalutor_app/pages/allocated_case_page.dart';
 import 'package:evalutor_app/pages/completed_case_page.dart';
 import 'package:evalutor_app/pages/confirmed_case_page.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
     CONFIRMED_CASE_PAGE:(context)=> ConfirmedCasePage(),
     PENDING_PAGE:(context)=> PendingPage(),
     EVALUATOR_PAGE:(context)=> EvaluatorPage(),
+    ADD_NEW_CASE_PAGE:(context)=> AddNewCasePage()
   };
   
   @override

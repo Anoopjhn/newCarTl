@@ -227,7 +227,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, ADD_NEW_CASE_PAGE);
+                      },
                       color: PRIMARY_COLOR,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(32)),

@@ -10,6 +10,7 @@ const ALLOCATED_CASE_PAGE = 'allocatedCasePage';
 const UNALLOCATED_CASE_PAGE ='unAllocatedCasePage';
 const PENDING_PAGE = 'pendingPage';
 const EVALUATOR_PAGE = 'evaluatorPage';
+const ADD_NEW_CASE_PAGE = 'addNewCasePage';
 
 
 
@@ -34,6 +35,12 @@ const TEAM_PERFORMANCE = "Team Performance";
 const SUMMARY = "Summary";
 const COMPLETED_CASES = 'Completed Cases';
 const UNQUOTED_CASES = 'Unquoted Cases';
+const ADD_NEW_CASE = 'Add New Case';
+const REGISTRATION_DETAILS = 'Registration Details';
+const VEHICLE_DETAILS ='Vehicle Details';
+const EVALUATION_DETAILS = 'Evaluation Details';
+const EVALUATOR = 'Evaluator';
+
 
 const HIGHEST_COMPLETED_CASES = "Highest Completed cases";
 const LOWEST_COMPLETED_CASES = "Lowest Completed Cases";
