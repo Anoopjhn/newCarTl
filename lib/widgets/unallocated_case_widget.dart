@@ -3,6 +3,7 @@ import 'package:evalutor_app/constants/colors.dart';
 import 'package:evalutor_app/constants/dimen.dart';
 import 'package:evalutor_app/constants/strings.dart';
 import 'package:flutter/material.dart';
+
 import 'grid_view_widget.dart';
 
 class UnAllocatedCaseWidget extends StatefulWidget {
@@ -42,11 +43,11 @@ class _UnAllocatedCaseWidgetState extends State<UnAllocatedCaseWidget> {
                     children: [
                       Text('Assigned to:  '),
                       CircleAvatar(
+                        radius: 20,
                         backgroundColor: PRIMARY_COLOR,
-                        radius: 16,
-                        child: Icon(Icons.person_outlined, color: APP_WHITE_COLOR,size: ICON_SIZE,),
+                        child: Icon(Icons.person_add_alt_1_outlined, color: APP_WHITE_COLOR, size: 20,),
                       ),
-                      Text('  Not Assigned'),
+                      Text(' Jack Daniel'),
                       IconButton(icon: Icon(Icons.edit_outlined, color: PRIMARY_COLOR,size: ICON_SIZE,), onPressed: () => displayBottomSheet(context))
                     ],
                   )
@@ -57,7 +58,7 @@ class _UnAllocatedCaseWidgetState extends State<UnAllocatedCaseWidget> {
                 child: CircleAvatar(
                   backgroundColor: PRIMARY_COLOR,
                   radius: 16,
-                  child: Icon(Icons.download_done_outlined, color: APP_WHITE_COLOR, size: ICON_SIZE,),
+                  child: Icon(Icons.download_done_outlined, color: APP_WHITE_COLOR, size: ICON_SIZE*0.7,),
                 ),
               )
             ],
@@ -66,6 +67,7 @@ class _UnAllocatedCaseWidgetState extends State<UnAllocatedCaseWidget> {
       ),
     );
   }
+
   displayBottomSheet(BuildContext context) {
     showModalBottomSheet(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
@@ -131,3 +133,4 @@ class _UnAllocatedCaseWidgetState extends State<UnAllocatedCaseWidget> {
     );
   }
 }
+

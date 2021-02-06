@@ -1,17 +1,10 @@
 import 'package:evalutor_app/constants/app_font_style.dart';
 import 'package:evalutor_app/constants/colors.dart';
 import 'package:evalutor_app/constants/dimen.dart';
-import 'package:evalutor_app/constants/strings.dart';
-import 'package:evalutor_app/widgets/confirmed_case_widget.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:evalutor_app/widgets/fund_transfer_widget.dart';
 import 'package:flutter/material.dart';
 
-class ConfirmedCasePage extends StatefulWidget {
-  @override
-  _ConfirmedCasePageState createState() => _ConfirmedCasePageState();
-}
-
-class _ConfirmedCasePageState extends State<ConfirmedCasePage> {
+class FundTransferPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +22,7 @@ class _ConfirmedCasePageState extends State<ConfirmedCasePage> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          CONFIRMED_CASES,
+          "Fund Transfers",
           style: AppFontStyle.appBarTittle(PRIMARY_COLOR),
         ),
       ),
@@ -43,7 +36,7 @@ class _ConfirmedCasePageState extends State<ConfirmedCasePage> {
                     itemCount: 15,
                     shrinkWrap: true,
                     itemBuilder: (context, int index){
-                      return ConfirmedCaseWidget();
+                      return FundTransferWidget();
                     }
                 )
               ],

@@ -74,6 +74,15 @@ class AppFontStyle{
     );
   }
 
+  static TextStyle headingTextStyle2(Color color, {num textSize}) {
+    return TextStyle(
+        color: color,
+        fontSize:textSize!=null? textSize: 18,
+        fontWeight: FontWeight.w600,
+        fontFamily: "Exo"
+    );
+  }
+
   static TextStyle regularTextStyle(Color color, {num textSize}) {
     return TextStyle(
         color: color,

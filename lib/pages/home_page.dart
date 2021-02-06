@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                             leading: Icon(Icons.beenhere_outlined,
                                 color: APP_BLACK_COLOR),
                             title: Text(
-                              CONFIRMED_CASES,
+                              "Unquoted Cases",
                               style: AppFontStyle.regularTextStyle2(
                                   APP_BLACK_COLOR,
                                   textSize: 18.0),
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ),
                             onTap: (){
-                              Navigator.pushNamed(context, CONFIRMED_CASE_PAGE);
+                              Navigator.pushNamed(context, UNQUOTED_CASES_PAGE);
                             },
                           ),
                           ListTile(
@@ -150,12 +150,186 @@ class _HomePageState extends State<HomePage> {
                           ),
                           ListTile(
                             onTap: (){
-                              Navigator.pushNamed(context, UNQUOTED_CASE_PAGE);
+                              Navigator.pushNamed(context, DEAL_OK_CASES_PAGE);
                             },
                             leading: Icon(Icons.assignment_outlined,
                                 color: APP_BLACK_COLOR),
                             title: Text(
-                              PRICE_NOT_QUOTED,
+                              "Deal Ok Cases",
+                              style: AppFontStyle.regularTextStyle2(
+                                  APP_BLACK_COLOR,
+                                  textSize: 18.0),
+                            ),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                CircleAvatar(
+                                  maxRadius: 16,
+                                  backgroundColor: PRIMARY_COLOR,
+                                  child: Text("9+",
+                                      style: TextStyle(color: APP_WHITE_COLOR)),
+                                ),
+                                SizedBox(width: LINE_HEIGHT),
+                                Icon(
+                                  Icons.navigate_next,
+                                  color: APP_BLACK_COLOR,
+                                )
+                              ],
+                            ),
+                          ),
+                          ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, JUNK_LEAD_PAGE);
+                            },
+                            leading: Icon(Icons.assignment_outlined,
+                                color: APP_BLACK_COLOR),
+                            title: Text(
+                              "Junk Leads",
+                              style: AppFontStyle.regularTextStyle2(
+                                  APP_BLACK_COLOR,
+                                  textSize: 18.0),
+                            ),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                CircleAvatar(
+                                  maxRadius: 16,
+                                  backgroundColor: PRIMARY_COLOR,
+                                  child: Text("9+",
+                                      style: TextStyle(color: APP_WHITE_COLOR)),
+                                ),
+                                SizedBox(width: LINE_HEIGHT),
+                                Icon(
+                                  Icons.navigate_next,
+                                  color: APP_BLACK_COLOR,
+                                )
+                              ],
+                            ),
+                          ),
+                          ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, FUND_TRANSFER_PAGE);
+                            },
+                            leading: Icon(Icons.assignment_outlined,
+                                color: APP_BLACK_COLOR),
+                            title: Text(
+                              "Fund Transfers",
+                              style: AppFontStyle.regularTextStyle2(
+                                  APP_BLACK_COLOR,
+                                  textSize: 18.0),
+                            ),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                CircleAvatar(
+                                  maxRadius: 16,
+                                  backgroundColor: PRIMARY_COLOR,
+                                  child: Text("9+",
+                                      style: TextStyle(color: APP_WHITE_COLOR)),
+                                ),
+                                SizedBox(width: LINE_HEIGHT),
+                                Icon(
+                                  Icons.navigate_next,
+                                  color: APP_BLACK_COLOR,
+                                )
+                              ],
+                            ),
+                          ),
+                          ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, LEADS_BREAK_UP_PAGE);
+                            },
+                            leading: Icon(Icons.assignment_outlined,
+                                color: APP_BLACK_COLOR),
+                            title: Text(
+                              "Leads break up",
+                              style: AppFontStyle.regularTextStyle2(
+                                  APP_BLACK_COLOR,
+                                  textSize: 18.0),
+                            ),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                CircleAvatar(
+                                  maxRadius: 16,
+                                  backgroundColor: PRIMARY_COLOR,
+                                  child: Text("9+",
+                                      style: TextStyle(color: APP_WHITE_COLOR)),
+                                ),
+                                SizedBox(width: LINE_HEIGHT),
+                                Icon(
+                                  Icons.navigate_next,
+                                  color: APP_BLACK_COLOR,
+                                )
+                              ],
+                            ),
+                          ),
+                          ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, PURCHASES_PAGE);
+                            },
+                            leading: Icon(Icons.assignment_outlined,
+                                color: APP_BLACK_COLOR),
+                            title: Text(
+                              "Purchases",
+                              style: AppFontStyle.regularTextStyle2(
+                                  APP_BLACK_COLOR,
+                                  textSize: 18.0),
+                            ),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                CircleAvatar(
+                                  maxRadius: 16,
+                                  backgroundColor: PRIMARY_COLOR,
+                                  child: Text("9+",
+                                      style: TextStyle(color: APP_WHITE_COLOR)),
+                                ),
+                                SizedBox(width: LINE_HEIGHT),
+                                Icon(
+                                  Icons.navigate_next,
+                                  color: APP_BLACK_COLOR,
+                                )
+                              ],
+                            ),
+                          ),
+                          ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, CHANNEL_WISE_SOURCING_PAGE);
+                            },
+                            leading: Icon(Icons.assignment_outlined,
+                                color: APP_BLACK_COLOR),
+                            title: Text(
+                              "Channel wise sourcing",
+                              style: AppFontStyle.regularTextStyle2(
+                                  APP_BLACK_COLOR,
+                                  textSize: 18.0),
+                            ),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                CircleAvatar(
+                                  maxRadius: 16,
+                                  backgroundColor: PRIMARY_COLOR,
+                                  child: Text("9+",
+                                      style: TextStyle(color: APP_WHITE_COLOR)),
+                                ),
+                                SizedBox(width: LINE_HEIGHT),
+                                Icon(
+                                  Icons.navigate_next,
+                                  color: APP_BLACK_COLOR,
+                                )
+                              ],
+                            ),
+                          ),
+                          ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, DOCUMENTS_PENDING_CASES_PAGE);
+                            },
+                            leading: Icon(Icons.assignment_outlined,
+                                color: APP_BLACK_COLOR),
+                            title: Text(
+                              "Documents Pending Case",
                               style: AppFontStyle.regularTextStyle2(
                                   APP_BLACK_COLOR,
                                   textSize: 18.0),

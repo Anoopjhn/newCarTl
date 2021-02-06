@@ -2,7 +2,12 @@ import 'package:evalutor_app/constants/app_font_style.dart';
 import 'package:evalutor_app/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class ConfirmedCaseWidget extends StatelessWidget {
+class DealOkCasesWidget extends StatefulWidget {
+  @override
+  _DealOkCasesWidgetState createState() => _DealOkCasesWidgetState();
+}
+
+class _DealOkCasesWidgetState extends State<DealOkCasesWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(

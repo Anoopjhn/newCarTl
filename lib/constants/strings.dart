@@ -4,13 +4,19 @@ const HOME_PAGE = 'homePage';
 const REPORTS_PAGE = "reportsPage";
 const PAYMENT_PAGE = 'paymentPage';
 const UNQUOTED_CASE_PAGE = 'unquotedCasePage';
-const CONFIRMED_CASE_PAGE = 'conformedCasePage';
-const COMPLETED_CASE_PAGE = "completedCasePage";
+const UNQUOTED_CASES_PAGE = 'unquotedCasesPage';
+const DEAL_OK_CASES_PAGE = "dealOkCasesPage";
 const ALLOCATED_CASE_PAGE = 'allocatedCasePage';
 const UNALLOCATED_CASE_PAGE ='unAllocatedCasePage';
 const PENDING_PAGE = 'pendingPage';
 const EVALUATOR_PAGE = 'evaluatorPage';
 const ADD_NEW_CASE_PAGE = 'addNewCasePage';
+const FUND_TRANSFER_PAGE ="fundTransferPage";
+const JUNK_LEAD_PAGE ="junkLeadPage";
+const  LEADS_BREAK_UP_PAGE = "leadsBreakUp";
+const PURCHASES_PAGE = "purchasesPage";
+const CHANNEL_WISE_SOURCING_PAGE = "channelWiseSourcingPage";
+const DOCUMENTS_PENDING_CASES_PAGE = "documentsPendingCasesPage";
 
 
 

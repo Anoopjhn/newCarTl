@@ -32,6 +32,7 @@ dependencies:
   calendar_strip: ^1.0.6
   url_launcher: ^5.7.10
   fa_stepper: ^0.0.2
+  date_picker_timeline: ^1.2.1
 
 
 dev_dependencies:

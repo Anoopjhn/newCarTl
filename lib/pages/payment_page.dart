@@ -1,3 +1,4 @@
+import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:evalutor_app/constants/app_font_style.dart';
 import 'package:evalutor_app/constants/colors.dart';
 import 'package:evalutor_app/constants/dimen.dart';
@@ -13,6 +14,11 @@ class PaymentPage extends StatefulWidget {
 }
 
 class _PaymentPageState extends State<PaymentPage> {
+
+
+  DateTime _selectedValue = DateTime.now();
+  DatePickerController _controller = DatePickerController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +45,28 @@ class _PaymentPageState extends State<PaymentPage> {
         child: SafeArea(
           child: Column(
             children: [
+              Container(
+                child: DatePicker(
+                  DateTime.now(),
+                  width: 60,
+                  height: 80,
+                  controller: _controller,
+                  initialSelectedDate: DateTime.now(),
+                  selectionColor: PRIMARY_COLOR,
+                  selectedTextColor: Colors.white,
+                  inactiveDates: [
+                    DateTime.now().add(Duration(days: 3)),
+                    DateTime.now().add(Duration(days: 4)),
+                    DateTime.now().add(Duration(days: 7))
+                  ],
+                  onDateChange: (date) {
+                    // New date selected
+                    setState(() {
+                      _selectedValue = date;
+                    });
+                  },
+                ),
+              ),
               SizedBox(height: LINE_HEIGHT,),
               Padding(
                 padding: const EdgeInsets.all(8.0),

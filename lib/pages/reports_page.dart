@@ -64,11 +64,11 @@ class _ReportsPageState extends State<ReportsPage> {
                           children: [
                             ListTile(
 
-                              title: Text(CONFIRMED_CASES, style: AppFontStyle.regularTextStyle2(APP_BLACK_COLOR, textSize: 20.0),),
+                              title: Text("Unquoted Cases", style: AppFontStyle.regularTextStyle2(APP_BLACK_COLOR, textSize: 20.0),),
                               subtitle: Text("12 Cases", style: AppFontStyle.bodyTextStyle(APP_BLACK_COLOR),),
                               trailing: Icon(Icons.navigate_next, color: APP_BLACK_COLOR,),
                               onTap: (){
-                                Navigator.pushNamed(context, CONFIRMED_CASE_PAGE);
+                                Navigator.pushNamed(context, UNQUOTED_CASES_PAGE);
                               },
                             ),
                             Divider(),
@@ -83,9 +83,9 @@ class _ReportsPageState extends State<ReportsPage> {
                             Divider(),
                             ListTile(
                               onTap: (){
-                                Navigator.pushNamed(context, COMPLETED_CASE_PAGE);
+                                Navigator.pushNamed(context, DEAL_OK_CASES_PAGE);
                               },
-                              title: Text(COMPLETED_CASES, style: AppFontStyle.regularTextStyle2(APP_BLACK_COLOR, textSize: 20.0),),
+                              title: Text("Deal Ok Cases", style: AppFontStyle.regularTextStyle2(APP_BLACK_COLOR, textSize: 20.0),),
                               subtitle: Text("12 Cases", style: AppFontStyle.bodyTextStyle(APP_BLACK_COLOR),),
                               trailing: Icon(Icons.navigate_next, color: APP_BLACK_COLOR,),
                             ),

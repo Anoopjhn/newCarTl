@@ -38,7 +38,6 @@ class _PendingWidgetState extends State<PendingWidget> {
                   Text('KL - 05 - 336 ', style: AppFontStyle.bodyTextStyle2(APP_GREY_COLOR)),
                   Text('Aby Thomas', style: AppFontStyle.bodyTextStyle2(APP_GREY_COLOR)),
                   Text('Kaloor, Ernakulam', style: AppFontStyle.bodyTextStyle2(APP_GREY_COLOR)),
-                  Text('NOT EVALUATED', style: AppFontStyle.bodyTextStyle(PRIMARY_COLOR),),
                   SizedBox(height: LINE_HEIGHT*0.5),
                   Row(
                     children: [

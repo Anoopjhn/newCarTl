@@ -2,16 +2,17 @@ import 'package:evalutor_app/constants/app_font_style.dart';
 import 'package:evalutor_app/constants/colors.dart';
 import 'package:evalutor_app/constants/dimen.dart';
 import 'package:evalutor_app/constants/strings.dart';
-import 'package:evalutor_app/widgets/pending_widget.dart';
+import 'package:evalutor_app/widgets/deal_ok_cases_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class PendingPage extends StatefulWidget {
+
+class DealOkCasesPage extends StatefulWidget {
   @override
-  _PendingPageState createState() => _PendingPageState();
+  _DealOkCasesPageState createState() => _DealOkCasesPageState();
 }
 
-class _PendingPageState extends State<PendingPage> {
+class _DealOkCasesPageState extends State<DealOkCasesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ class _PendingPageState extends State<PendingPage> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          "Pending Cases",
+          "Deal Ok Cases",
           style: AppFontStyle.appBarTittle(PRIMARY_COLOR),
         ),
       ),
@@ -43,7 +44,7 @@ class _PendingPageState extends State<PendingPage> {
                     itemCount: 15,
                     shrinkWrap: true,
                     itemBuilder: (context, int index){
-                      return PendingWidget();
+                      return DealOkCasesWidget();
                     }
                 )
               ],
