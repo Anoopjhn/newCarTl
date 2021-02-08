@@ -17,6 +17,7 @@ const  LEADS_BREAK_UP_PAGE = "leadsBreakUp";
 const PURCHASES_PAGE = "purchasesPage";
 const CHANNEL_WISE_SOURCING_PAGE = "channelWiseSourcingPage";
 const DOCUMENTS_PENDING_CASES_PAGE = "documentsPendingCasesPage";
+const LOGIN_PAGE = "loginPage";
 
 
 

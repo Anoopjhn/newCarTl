@@ -6,6 +6,7 @@ import 'package:evalutor_app/pages/documents_pending_cases_page.dart';
 import 'package:evalutor_app/pages/fund_transfer_page.dart';
 import 'package:evalutor_app/pages/junk_leads_page.dart';
 import 'package:evalutor_app/pages/leads_break_up_page.dart';
+import 'package:evalutor_app/pages/login_page.dart';
 import 'package:evalutor_app/pages/purchases_page.dart';
 import 'package:evalutor_app/pages/unquoted_cases_page.dart';
 import 'package:evalutor_app/pages/evaluator_page.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
     PURCHASES_PAGE :(context)=>PurchasesPage(),
     CHANNEL_WISE_SOURCING_PAGE :(context)=> ChannelWiseSourcingPage(),
     DOCUMENTS_PENDING_CASES_PAGE :(context)=> DocumentsPendingCasesPage(),
+    LOGIN_PAGE :(context)=> LoginPage(),
 
     PENDING_PAGE:(context)=> PendingPage(),
     EVALUATOR_PAGE:(context)=> EvaluatorPage(),
@@ -54,7 +56,7 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         routes: routes,
-        initialRoute: HOME_PAGE,
+        initialRoute: LOGIN_PAGE,
       );
   }
 }
