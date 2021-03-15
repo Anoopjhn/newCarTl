@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:evalutor_app/constants/app_font_style.dart';
 import 'package:evalutor_app/constants/colors.dart';
 import 'package:evalutor_app/constants/dimen.dart';
@@ -429,191 +431,232 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final orientation = MediaQuery.of(context).orientation;
-    return Scaffold(
-      backgroundColor: APP_WHITE_COLOR,
-      appBar: AppBar(
+    return WillPopScope(
+      onWillPop: ()async{
+        showAlert(context);
+      },
+      child: Scaffold(
         backgroundColor: APP_WHITE_COLOR,
-        elevation: 0,
-        centerTitle: true,
-        title: Text(
-          EVALUATOR_APP,
-          style: AppFontStyle.appBarTittle(PRIMARY_COLOR),
-        ),
-        actions: [
-          PopupMenuButton<int>(
-            onSelected: (value) {
-              if (value == 1) {
-                showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24)),
-                        title: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Loging Out",
-                              style: AppFontStyle.headingTextStyle(
-                                  APP_BLACK_COLOR),
-                            ),
-                            SizedBox(
-                              height: LINE_HEIGHT * 0.5,
-                            ),
-                            Text(
-                              "Are you sure you want to log out?",
-                              style:
-                              AppFontStyle.labelTextStyle(APP_BLACK_COLOR),
-                              textAlign: TextAlign.center,
-                            ),
-                            Divider(),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                FlatButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: Text(
-                                      "Cancel",
-                                      style: AppFontStyle.labelTextStyle(
-                                          PRIMARY_COLOR),
-                                    )),
-                                VerticalDivider(
-                                  width: 25,
-                                  thickness: 16,
-                                ),
-                                FlatButton(
-                                    onPressed: () {
-                                      Navigator.pushNamed(context, LOGIN_PAGE);
-                                    },
-                                    child: Text(
-                                      "Yes",
-                                      style: AppFontStyle.labelTextStyle(
-                                          PRIMARY_COLOR),
-                                    )),
-                              ],
-                            )
-                          ],
-                        ),
-                      );
-                    });
-              }
-            },
-            itemBuilder: (context) => [
-              PopupMenuItem(
-                value: 1,
-                child: Text("Logout"),
-              ),
-            ],
-            icon: Icon(Icons.more_vert_outlined, color: PRIMARY_COLOR),
-          )
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-                padding: const EdgeInsets.only(top: 16),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: PRIMARY_COLOR,
-                      borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(12),
-                          topRight: Radius.circular(12))),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        top: 8, bottom: 8, left: 8, right: 20),
-                    child: Text(
-                      TEAM_LEAD,
-                      style: AppFontStyle.regularSmallTextStyle(APP_WHITE_COLOR,
-                          textSize: 16.0),
-                    ),
-                  ),
-                )),
-            Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    backgroundImage: CachedNetworkImageProvider(
-                        "https://www.adbasis.com/images/divita-a65623c8.jpg"),
-                    maxRadius: 60,
-                  ),
-                  SizedBox(
-                    height: LINE_HEIGHT,
-                  ),
-                  Text("John Lee",
-                      style: AppFontStyle.regularTextStyle2(APP_BLACK_COLOR,
-                          textSize: 22.0)),
-                  Text(
-                    "@98xxxxxx",
-                    style: AppFontStyle.bodyTextStyle2(APP_GREY_COLOR),
-                  ),
-                  Text(
-                    "Kaloor",
-                    style: AppFontStyle.bodyTextStyle2(APP_GREY_COLOR),
-                  ),
-                  SizedBox(height: LINE_HEIGHT * 2),
-                  ListTile(
-                      leading: Text(
-                        YOUR_TEAM,
-                        style: AppFontStyle.regularTextStyle2(APP_BLACK_COLOR,
-                            textSize: 20.0),
-                      ),
-                      trailing: PopupMenuButton<int>(
-                        itemBuilder: (context) => [
-                          PopupMenuItem(
-                            value: 1,
-                            child: Text(HIGHEST_COMPLETED_CASES),
+        appBar: AppBar(
+          backgroundColor: APP_WHITE_COLOR,
+          elevation: 0,
+          centerTitle: true,
+          title: Text(
+            EVALUATOR_APP,
+            style: AppFontStyle.appBarTittle(PRIMARY_COLOR),
+          ),
+          actions: [
+            PopupMenuButton<int>(
+              onSelected: (value) {
+                if (value == 1) {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(24)),
+                          title: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Loging Out",
+                                style: AppFontStyle.headingTextStyle(
+                                    APP_BLACK_COLOR),
+                              ),
+                              SizedBox(
+                                height: LINE_HEIGHT * 0.5,
+                              ),
+                              Text(
+                                "Are you sure you want to log out?",
+                                style:
+                                AppFontStyle.labelTextStyle(APP_BLACK_COLOR),
+                                textAlign: TextAlign.center,
+                              ),
+                              Divider(),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  FlatButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(
+                                        "Cancel",
+                                        style: AppFontStyle.labelTextStyle(
+                                            PRIMARY_COLOR),
+                                      )),
+                                  VerticalDivider(
+                                    width: 25,
+                                    thickness: 16,
+                                  ),
+                                  FlatButton(
+                                      onPressed: () {
+                                        Navigator.pushNamed(context, LOGIN_PAGE);
+                                      },
+                                      child: Text(
+                                        "Yes",
+                                        style: AppFontStyle.labelTextStyle(
+                                            PRIMARY_COLOR),
+                                      )),
+                                ],
+                              )
+                            ],
                           ),
-                          PopupMenuDivider(),
-                          PopupMenuItem(
-                            value: 2,
-                            child: Text(LOWEST_COMPLETED_CASES),
-                          ),
-                          PopupMenuDivider(),
-                          PopupMenuItem(
-                            value: 3,
-                            child: Text(HIGHEST_PENDING_CASES),
-                          ),
-                          PopupMenuDivider(),
-                          PopupMenuItem(
-                            value: 4,
-                            child: Text(LOWEST_PENDING_CASES),
-                          ),
-                        ],
-                        icon: Icon(Icons.sort),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
-                        offset: Offset(0, 100),
-                      )),
-                  GridView.builder(
-                      shrinkWrap: true,
-                      itemCount: 16,
-                      physics: NeverScrollableScrollPhysics(),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount:
-                              (orientation == Orientation.portrait) ? 3 : 4),
-                      itemBuilder: (BuildContext context, int index) {
-                        return GridViewWidget();
-                      }),
-                  SizedBox(height: LINE_HEIGHT * 3),
-                ],
-              ),
+                        );
+                      });
+                }
+              },
+              itemBuilder: (context) => [
+                PopupMenuItem(
+                  value: 1,
+                  child: Text("Logout"),
+                ),
+              ],
+              icon: Icon(Icons.more_vert_outlined, color: PRIMARY_COLOR),
             )
           ],
         ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => displayBottomSheet(context),
-        backgroundColor: PRIMARY_COLOR,
-        child: Icon(
-          Icons.grain,
-          color: APP_WHITE_COLOR,
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: PRIMARY_COLOR,
+                        borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(12),
+                            topRight: Radius.circular(12))),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 8, bottom: 8, left: 8, right: 20),
+                      child: Text(
+                        TEAM_LEAD,
+                        style: AppFontStyle.regularSmallTextStyle(APP_WHITE_COLOR,
+                            textSize: 16.0),
+                      ),
+                    ),
+                  )),
+              Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: CachedNetworkImageProvider(
+                          "https://www.adbasis.com/images/divita-a65623c8.jpg"),
+                      maxRadius: 60,
+                    ),
+                    SizedBox(
+                      height: LINE_HEIGHT,
+                    ),
+                    Text("John Lee",
+                        style: AppFontStyle.regularTextStyle2(APP_BLACK_COLOR,
+                            textSize: 22.0)),
+                    Text(
+                      "@98xxxxxx",
+                      style: AppFontStyle.bodyTextStyle2(APP_GREY_COLOR),
+                    ),
+                    Text(
+                      "Kaloor",
+                      style: AppFontStyle.bodyTextStyle2(APP_GREY_COLOR),
+                    ),
+                    SizedBox(height: LINE_HEIGHT * 2),
+                    ListTile(
+                        leading: Text(
+                          YOUR_TEAM,
+                          style: AppFontStyle.regularTextStyle2(APP_BLACK_COLOR,
+                              textSize: 20.0),
+                        ),
+                        trailing: PopupMenuButton<int>(
+                          itemBuilder: (context) => [
+                            PopupMenuItem(
+                              value: 1,
+                              child: Text(HIGHEST_COMPLETED_CASES),
+                            ),
+                            PopupMenuDivider(),
+                            PopupMenuItem(
+                              value: 2,
+                              child: Text(LOWEST_COMPLETED_CASES),
+                            ),
+                            PopupMenuDivider(),
+                            PopupMenuItem(
+                              value: 3,
+                              child: Text(HIGHEST_PENDING_CASES),
+                            ),
+                            PopupMenuDivider(),
+                            PopupMenuItem(
+                              value: 4,
+                              child: Text(LOWEST_PENDING_CASES),
+                            ),
+                          ],
+                          icon: Icon(Icons.sort),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+                          offset: Offset(0, 100),
+                        )),
+                    GridView.builder(
+                        shrinkWrap: true,
+                        itemCount: 16,
+                        physics: NeverScrollableScrollPhysics(),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount:
+                                (orientation == Orientation.portrait) ? 3 : 4),
+                        itemBuilder: (BuildContext context, int index) {
+                          return GridViewWidget();
+                        }),
+                    SizedBox(height: LINE_HEIGHT * 3),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => displayBottomSheet(context),
+          backgroundColor: PRIMARY_COLOR,
+          child: Icon(
+            Icons.grain,
+            color: APP_WHITE_COLOR,
+          ),
         ),
       ),
     );
   }
+}
+
+Widget showAlert(BuildContext context){
+  showDialog(
+      context: context,
+      builder: (BuildContext context){
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("Are you sure you want to Exit?", style: AppFontStyle.labelTextStyle2(APP_BLACK_COLOR),),
+              Divider(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FlatButton(
+                      onPressed: (){
+                        Navigator.pop(context);
+                      },
+                      child: Text("No", style: AppFontStyle.labelTextStyle2(PRIMARY_COLOR),)
+                  ),
+                  VerticalDivider(width: 25,thickness: 16,),
+                  FlatButton(
+                      onPressed: (){
+                        exit(1);
+                      },
+                      child: Text("Yes", style: AppFontStyle.labelTextStyle2(PRIMARY_COLOR),)
+                  ),
+                ],
+              )
+            ],
+          ),
+        );
+      }
+  );
 }

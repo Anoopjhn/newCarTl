@@ -137,7 +137,7 @@ class AppFontStyle{
     );
   }
 
-  static TextStyle labelTextStyle(Color color, {num textSize}) {
+   static TextStyle labelTextStyle(Color color, {num textSize}) {
     return TextStyle(
         color: color,
         fontSize: 16,
@@ -145,5 +145,15 @@ class AppFontStyle{
         fontFamily: "Exo"
     );
   }
+
+  static TextStyle labelTextStyle2(Color color, {num textSize}) {
+    return TextStyle(
+        color: color,
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        fontFamily: "Exo"
+    );
+  }
+
 
 }
