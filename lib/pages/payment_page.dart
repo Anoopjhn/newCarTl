@@ -1,10 +1,9 @@
-import 'package:date_picker_timeline/date_picker_widget.dart';
+import 'package:date_picker_timeline/date_picker_widget.dart' as picker;
 import 'package:evalutor_app/constants/app_font_style.dart';
 import 'package:evalutor_app/constants/colors.dart';
 import 'package:evalutor_app/constants/dimen.dart';
 import 'package:evalutor_app/constants/strings.dart';
 import 'package:evalutor_app/widgets/payment_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -17,7 +16,7 @@ class _PaymentPageState extends State<PaymentPage> {
 
 
   DateTime _selectedValue = DateTime.now();
-  DatePickerController _controller = DatePickerController();
+  picker.DatePickerController _controller = picker.DatePickerController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +45,7 @@ class _PaymentPageState extends State<PaymentPage> {
           child: Column(
             children: [
               Container(
-                child: DatePicker(
+                child: picker.DatePicker(
                   DateTime.now(),
                   width: 60,
                   height: 80,

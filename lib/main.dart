@@ -15,7 +15,9 @@ import 'package:evalutor_app/pages/payment_page.dart';
 import 'package:evalutor_app/pages/pending_page.dart';
 import 'package:evalutor_app/pages/reports_page.dart';
 import 'package:evalutor_app/pages/unallocated_case_page.dart';
+import 'package:evalutor_app/provider/form_data.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import './constants/strings.dart';
 import 'constants/colors.dart';
 
@@ -48,15 +50,20 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.red,
-          backgroundColor: APP_WHITE_COLOR,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
+    return  MultiProvider(
+      providers: [
+        ChangeNotifierProvider<FormData>(create: (_)=>FormData()),
+      ],
+      child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.red,
+            backgroundColor: APP_WHITE_COLOR,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+          routes: routes,
+          initialRoute: LOGIN_PAGE,
         ),
-        routes: routes,
-        initialRoute: LOGIN_PAGE,
-      );
+    );
   }
 }

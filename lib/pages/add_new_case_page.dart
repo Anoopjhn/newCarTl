@@ -2,6 +2,7 @@ import 'package:evalutor_app/constants/app_font_style.dart';
 import 'package:evalutor_app/constants/colors.dart';
 import 'package:evalutor_app/constants/dimen.dart';
 import 'package:evalutor_app/constants/strings.dart';
+import 'package:evalutor_app/provider/form_data.dart';
 import 'package:evalutor_app/widgets/evaluation_details_widget.dart';
 import 'package:evalutor_app/widgets/registration_details_widget.dart';
 import 'package:evalutor_app/widgets/vehicle_details_widget.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fa_stepper/fa_stepper.dart';
+import 'package:provider/provider.dart';
 
 class AddNewCasePage extends StatefulWidget {
   @override
@@ -20,6 +22,7 @@ class _AddNewCasePageState extends State<AddNewCasePage> {
 
   @override
   Widget build(BuildContext context) {
+    FormData formData = Provider.of(context);
     return Scaffold(
         backgroundColor: APP_WHITE_COLOR,
         appBar: AppBar(
@@ -63,11 +66,12 @@ class _AddNewCasePageState extends State<AddNewCasePage> {
                 type: FAStepperType.vertical,
                 titleHeight: 120,
                 currentStep: 0,
+                onStepTapped: (val)=> changeStep(val, formData),
                 titleIconArrange: FAStepperTitleIconArrange.row,
                 steps:[
-                  FAStep(state: FAStepstate.complete, title: Text(REGISTRATION_DETAILS,style: AppFontStyle.titleAppBarStyle2(APP_BLACK_COLOR)), content: ResistrationDetailsWidget()),
-                  FAStep(state: FAStepstate.editing, title: Text(VEHICLE_DETAILS,style: AppFontStyle.titleAppBarStyle2(APP_BLACK_COLOR)), content: VehicleDetailsWidget()),
-                  FAStep(state: FAStepstate.editing, title: Text(EVALUATION_DETAILS,style: AppFontStyle.titleAppBarStyle2(APP_BLACK_COLOR)), content: EvaluationDetailsWidget(), isActive: true,),
+                  FAStep(state: FAStepstate.complete, title: Text(REGISTRATION_DETAILS,style: AppFontStyle.titleAppBarStyle2(APP_BLACK_COLOR)), content: ResistrationDetailsWidget(), isActive: formData.stepCount==0,),
+                  FAStep(state: FAStepstate.editing, title: Text(VEHICLE_DETAILS,style: AppFontStyle.titleAppBarStyle2(APP_BLACK_COLOR)), content: VehicleDetailsWidget(), isActive: formData.stepCount==1),
+                  FAStep(state: FAStepstate.editing, title: Text(EVALUATION_DETAILS,style: AppFontStyle.titleAppBarStyle2(APP_BLACK_COLOR)), content: EvaluationDetailsWidget(), isActive: formData.stepCount==2),
                 ],
                 controlsBuilder: (BuildContext context,
                     {VoidCallback onStepContinue, VoidCallback onStepCancel}) =>
@@ -79,4 +83,8 @@ class _AddNewCasePageState extends State<AddNewCasePage> {
       ),
       );
   }
+  void changeStep(int value, FormData formData){
+   formData.stepCount = value;
+  }
 }
+

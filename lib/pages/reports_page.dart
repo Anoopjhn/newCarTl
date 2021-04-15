@@ -7,7 +7,6 @@ import 'package:evalutor_app/widgets/team_performance_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:calendar_strip/calendar_strip.dart';
 
 
 class ReportsPage extends StatefulWidget {
