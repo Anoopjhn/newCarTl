@@ -27,7 +27,7 @@ const EVALUATOR_APP= "Evaluator App";
 
 //texts
 
-const TEAM_LEAD = "Team Lead";
+const TEAM_LEAD = "Team Leader";
 const YOUR_TEAM = "Your Team";
 const CONFIRMED_CASES = "Confirmed Cases";
 

@@ -1,6 +1,7 @@
 import 'package:evalutor_app/constants/app_font_style.dart';
 import 'package:evalutor_app/constants/colors.dart';
 import 'package:evalutor_app/constants/dimen.dart';
+import 'package:evalutor_app/widgets/Calendar.dart';
 import 'package:evalutor_app/widgets/fund_transfer_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +31,7 @@ class FundTransferPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                MyCalendar(),
                 SizedBox(height: LINE_HEIGHT,),
                 ListView.builder(
                     physics: NeverScrollableScrollPhysics(),
