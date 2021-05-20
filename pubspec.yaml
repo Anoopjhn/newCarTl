@@ -33,6 +33,13 @@ dependencies:
   fa_stepper: ^0.0.2
   date_picker_timeline: ^1.2.1
   provider: ^5.0.0
+  bloc: ^7.0.0
+  flutter_bloc: ^7.0.0
+  hydrated_bloc: ^7.0.0
+  equatable: ^2.0.0
+  shared_preferences: ^2.0.5
+  http: ^0.13.2
+  fluttertoast: ^8.0.6
 
 
 dev_dependencies:
